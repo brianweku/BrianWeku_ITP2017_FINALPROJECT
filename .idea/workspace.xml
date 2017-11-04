@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39806486-8cc0-433d-a92f-322b3ca1fe89" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/alien2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/alien2a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/alien2b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/alien2c.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bird.png" afterPath="$PROJECT_DIR$/bird.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/birddown.png" afterPath="$PROJECT_DIR$/birddown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/birdup.png" afterPath="$PROJECT_DIR$/birdup.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pipedown.png" afterPath="$PROJECT_DIR$/pipedown.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pipeup.png" afterPath="$PROJECT_DIR$/pipeup.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/burung.py" afterPath="$PROJECT_DIR$/burung.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/burung_etc.py" afterPath="$PROJECT_DIR$/burung_etc.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +16,8 @@
       <file leaf-file-name="burung.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/burung.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="185" column="40" lean-forward="true" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
+            <state relative-caret-position="427">
+              <caret line="235" column="45" lean-forward="true" selection-start-line="235" selection-start-column="45" selection-end-line="235" selection-end-column="45" />
               <folding>
                 <element signature="e#67#87#0" expanded="true" />
               </folding>
@@ -73,8 +63,8 @@
         <option value="$PROJECT_DIR$/etc.py" />
         <option value="$PROJECT_DIR$/burung etc.py" />
         <option value="$PROJECT_DIR$/FILE-1.py" />
-        <option value="$PROJECT_DIR$/burung.py" />
         <option value="$PROJECT_DIR$/burung_etc.py" />
+        <option value="$PROJECT_DIR$/burung.py" />
       </list>
     </option>
   </component>
@@ -511,8 +501,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/burung.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="185" column="40" lean-forward="true" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
+        <state relative-caret-position="427">
+          <caret line="235" column="45" lean-forward="true" selection-start-line="235" selection-start-column="45" selection-end-line="235" selection-end-column="45" />
           <folding>
             <element signature="e#67#87#0" expanded="true" />
           </folding>

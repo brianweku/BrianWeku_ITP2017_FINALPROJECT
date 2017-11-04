@@ -232,7 +232,7 @@ def play():
                 movedown = False
                 moveup = False
         if isinstance(bird, b.Bird):
-            if pygame.time.get_ticks()-spawn>=1000:
+            if pygame.time.get_ticks()-spawn>=17000:
                 spawn=pygame.time.get_ticks()
                 tempalien=b.Alien(1080,random.randint(300,500))
                 fourth.add(tempalien)
