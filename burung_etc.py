@@ -1,7 +1,7 @@
-#importing pygame
+#importing pygame and random
 from pygame import *
 from pygame.sprite import *
-
+import random
 
 #the bird
 class Bird(Sprite):
@@ -32,6 +32,35 @@ class Bird(Sprite):
         self.rect=self.image.get_rect()
         self.rect.center=((self.a, self.b))
 
+#the alien icon and when it became one
+class Alien(Sprite):
+    def __init__(self,x,y):
+        Sprite.__init__(self)
+        self.count=3
+        self.image=image.load('images/alien3.png')
+
+        self.rect=self.image.get_rect()
+        self.a=x
+        self.b=y
+        self.rect.center=((self.a, self.b))
+    def move(self, a, b):
+        self.a+=a
+        self.b+=b
+        self.rect.center=((self.a, self.b))
+    def move_left(self):
+        self.rect.left-=4.5
+    def Add(self):
+        self.count += .25
+    def checkcount(self):
+        if self.count<=5:
+            self.image=image.load('images/alien3.png')
+        if self.count >= 5:
+            self.image = image.load ('images/alien0.png')
+        if self.count >= 10:
+            self.image = image.load ('images/alien1.png')
+
+        if self.count >=15:
+            self.count=0
 
 #if i want to add a text box button
 class text_box(Sprite):
@@ -97,23 +126,6 @@ class Ebutton(Sprite):
         self.image=image.load('exitbutton.png')
         self.rect=self.image.get_rect()
         self.rect.center=(self.x, self.y)
-
-#the alien icon and when it became one
-class Alien(Sprite):
-    def __init__(self,x,y):
-        Sprite.__init__(self)
-        self.image=image.load('alien2.png')
-        self.rect=self.image.get_rect()
-        self.a=x
-        self.b=y
-        self.rect.center=((self.a, self.b))
-    def move(self, a, b):
-        self.a+=a
-        self.b+=b
-        self.rect.center=((self.a, self.b))
-    def move_left(self):
-        self.rect.left-=4.5
-
 
 #moving backgrounds
 class Bg1(Sprite):

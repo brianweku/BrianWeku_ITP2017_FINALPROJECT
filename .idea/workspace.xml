@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39806486-8cc0-433d-a92f-322b3ca1fe89" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/alien2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/alien2a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/alien2b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/alien2c.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bird.png" afterPath="$PROJECT_DIR$/bird.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/birddown.png" afterPath="$PROJECT_DIR$/birddown.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/birdup.png" afterPath="$PROJECT_DIR$/birdup.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pipedown.png" afterPath="$PROJECT_DIR$/pipedown.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pipeup.png" afterPath="$PROJECT_DIR$/pipeup.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/burung.py" afterPath="$PROJECT_DIR$/burung.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/burung_etc.py" afterPath="$PROJECT_DIR$/burung_etc.py" />
     </list>
@@ -17,8 +26,8 @@
       <file leaf-file-name="burung.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/burung.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4505">
-              <caret line="265" column="5" lean-forward="true" selection-start-line="265" selection-start-column="5" selection-end-line="265" selection-end-column="5" />
+            <state relative-caret-position="240">
+              <caret line="185" column="40" lean-forward="true" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
               <folding>
                 <element signature="e#67#87#0" expanded="true" />
               </folding>
@@ -29,10 +38,10 @@
       <file leaf-file-name="burung_etc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/burung_etc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="58" column="18" lean-forward="false" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+            <state relative-caret-position="635">
+              <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
               <folding>
-                <element signature="e#18#38#0" expanded="true" />
+                <element signature="e#29#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -47,6 +56,11 @@
       <find>over</find>
       <find>normal</find>
       <find>jpg</find>
+      <find>alie</find>
+      <find>Add</find>
+      <find>hover</find>
+      <find>stop</find>
+      <find>alien</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -59,8 +73,8 @@
         <option value="$PROJECT_DIR$/etc.py" />
         <option value="$PROJECT_DIR$/burung etc.py" />
         <option value="$PROJECT_DIR$/FILE-1.py" />
-        <option value="$PROJECT_DIR$/burung_etc.py" />
         <option value="$PROJECT_DIR$/burung.py" />
+        <option value="$PROJECT_DIR$/burung_etc.py" />
       </list>
     </option>
   </component>
@@ -252,7 +266,7 @@
         <state relative-caret-position="3060">
           <caret line="184" column="28" lean-forward="false" selection-start-line="184" selection-start-column="28" selection-end-line="184" selection-end-column="28" />
           <folding>
-            <element signature="e#18#38#0" expanded="true" />
+            <element signature="e#29#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -272,7 +286,7 @@
         <state relative-caret-position="1785">
           <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
           <folding>
-            <element signature="e#18#38#0" expanded="true" />
+            <element signature="e#29#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -297,7 +311,7 @@
         <state relative-caret-position="391">
           <caret line="27" column="43" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="27" selection-end-column="43" />
           <folding>
-            <element signature="e#18#38#0" expanded="true" />
+            <element signature="e#29#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -322,7 +336,7 @@
         <state relative-caret-position="1394">
           <caret line="86" column="29" lean-forward="true" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
           <folding>
-            <element signature="e#18#38#0" expanded="true" />
+            <element signature="e#29#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -342,7 +356,7 @@
         <state relative-caret-position="1309">
           <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
-            <element signature="e#18#38#0" expanded="true" />
+            <element signature="e#29#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -362,7 +376,7 @@
         <state relative-caret-position="102">
           <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
           <folding>
-            <element signature="e#18#38#0" expanded="true" />
+            <element signature="e#29#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -386,7 +400,7 @@
         <state relative-caret-position="969">
           <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
-            <element signature="e#18#38#0" expanded="true" />
+            <element signature="e#29#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -487,18 +501,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/burung_etc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="58" column="18" lean-forward="false" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+        <state relative-caret-position="635">
+          <caret line="61" column="27" lean-forward="true" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
           <folding>
-            <element signature="e#18#38#0" expanded="true" />
+            <element signature="e#29#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/burung.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4505">
-          <caret line="265" column="5" lean-forward="true" selection-start-line="265" selection-start-column="5" selection-end-line="265" selection-end-column="5" />
+        <state relative-caret-position="240">
+          <caret line="185" column="40" lean-forward="true" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
           <folding>
             <element signature="e#67#87#0" expanded="true" />
           </folding>

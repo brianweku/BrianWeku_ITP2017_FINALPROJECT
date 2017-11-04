@@ -36,6 +36,7 @@ first=Group(start,inst,bye,sound,sound1)
 #the main menu
 def playon():
     active1 = True
+
     while active1:
         screen.fill(white)
         screen.blit(menubg, (0,0))
@@ -83,6 +84,7 @@ def play():
     flap=pygame.mixer.Sound('flap.ogg')
     point=pygame.mixer.Sound('point.ogg')
     crash=pygame.mixer.Sound('crash.ogg')
+    hover=pygame.mixer.Sound('hover.ogg')
     active2 = True
     moveup=False
     movedown = False
@@ -96,6 +98,7 @@ def play():
     fourth=Group()
     fifth=(pipedown,pipeup,pipedown1,pipeup1)
     while active2:
+
         scoreboard=b.text_box("%d"%score, 540, 100, 35, white)
         second=Group(bg1, bg2, bg3, bg4, bird,pipedown,pipeup,pipedown1,pipeup1, scoreboard)
         screen.fill(white)
@@ -104,6 +107,7 @@ def play():
         fourth.draw(screen)
         display.update()
         for i in event.get():
+
             if i.type==QUIT:
                 pygame.quit()
                 exit()
@@ -135,6 +139,9 @@ def play():
 
                     if i.key==K_DOWN:
                         movedown=False
+
+
+
 
         if isinstance(bird,b.Alien):
             if moveup==True:
@@ -197,20 +204,27 @@ def play():
 
 
         if bird.rect.colliderect(pipeup) or bird.rect.colliderect(pipedown) or bird.rect.colliderect(pipeup1) or bird.rect.colliderect(pipedown1):
+            hover.stop()
             screen.fill(white)
             second.draw(screen)
-            screen.blit(gover, (340, 300))
+            screen.blit(gover,(340, 300))
             display.update()
             crash.play()
             time.sleep(3)
             active2=False
 
+
         if spritecollideany(bird, fourth):
             alientimer=pygame.time.get_ticks()
             moveup=False
             bird = b.Alien(bird.rect.centerx,bird.rect.centery)
+            hover.play()
+        if isinstance(bird, b.Bird):
+            hover.stop()
+        if isinstance(bird,b.Alien):
 
-
+            bird.Add()
+            bird.checkcount()
 
         if isinstance(bird,b.Alien):
             if pygame.time.get_ticks()-alientimer>=7000:
@@ -218,7 +232,7 @@ def play():
                 movedown = False
                 moveup = False
         if isinstance(bird, b.Bird):
-            if pygame.time.get_ticks()-spawn>=17000:
+            if pygame.time.get_ticks()-spawn>=1000:
                 spawn=pygame.time.get_ticks()
                 tempalien=b.Alien(1080,random.randint(300,500))
                 fourth.add(tempalien)
@@ -232,6 +246,7 @@ def play():
         bg2.move_left()
         bg3.move_left()
         bg4.move_left()
+
         for alien in fourth:
             alien.move_left()
 
