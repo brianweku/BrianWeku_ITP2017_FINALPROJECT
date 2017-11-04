@@ -43,7 +43,24 @@ class text_box(Sprite):
         self.image=self.font.render(message,1,black,color)
         self.rect=self.image.get_rect()
         self.rect.center=(x, y)
-
+#play music button
+class Playbutton(Sprite):
+    def __init__(self):
+        Sprite.__init__(self)
+        self.x=100
+        self.y=100
+        self.image=image.load('play.png')
+        self.rect=self.image.get_rect()
+        self.rect.center=(self.x, self.y)
+#pause mmusic button
+class Pausebutton(Sprite):
+    def __init__(self):
+        Sprite.__init__(self)
+        self.x=155
+        self.y=100
+        self.image=image.load('pause.png')
+        self.rect=self.image.get_rect()
+        self.rect.center=(self.x, self.y)
 #back button
 class Bbutton(Sprite):
     def __init__(self):

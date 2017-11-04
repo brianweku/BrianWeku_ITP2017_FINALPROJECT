@@ -29,7 +29,9 @@ start=b.Sbutton()
 inst=b.Hbutton()
 bye=b.Ebutton()
 menubg=image.load('bgground.png')
-first=Group(start,inst,bye)
+sound=b.Playbutton()
+sound1=b.Pausebutton()
+first=Group(start,inst,bye,sound,sound1)
 
 #the main menu
 def playon():
@@ -59,6 +61,10 @@ def playon():
                     help()
                 if start.rect.collidepoint(mouse.get_pos()):
                     play()
+                if sound1.rect.collidepoint(mouse.get_pos()):
+                    pygame.mixer.music.pause()
+                if sound.rect.collidepoint(mouse.get_pos()):
+                    pygame.mixer.music.unpause()
 
 #where the game starts
 def play():
