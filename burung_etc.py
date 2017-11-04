@@ -6,7 +6,7 @@ import time
 class Bird(Sprite):
     def __init__(self,x,y):
         Sprite.__init__(self)
-        self.image=image.load('bird.jpg')
+        self.image=image.load('bird.png')
         self.rect=self.image.get_rect()
         self.a=x
         self.b=y
@@ -17,17 +17,17 @@ class Bird(Sprite):
         self.rect.center=((self.a, self.b))
 
     def up(self):
-        self.image=image.load('birdup.jpg')
+        self.image=image.load('birdup.png')
         self.rect=self.image.get_rect()
         self.rect.center=((self.a, self.b))
 
     def normal(self):
-        self.image=image.load('bird.jpg')
+        self.image=image.load('bird.png')
         self.rect=self.image.get_rect()
         self.rect.center=((self.a, self.b))
 
     def down(self):
-        self.image=image.load('birddown.jpg')
+        self.image=image.load('birddown.png')
         self.rect=self.image.get_rect()
         self.rect.center=((self.a, self.b))
 
@@ -91,30 +91,12 @@ class Alien(Sprite):
         self.rect.center=((self.a, self.b))
     def move_left(self):
         self.rect.left-=4
-    def a(self,x,y):
-        self.image=image.load('alien2a.png')
-        self.rect=self.image.get_rect()
-        self.a=x
-        self.b=y
-        self.rect.center=((self.a, self.b))
-    def b(self,x,y):
-        self.image=image.load('alien2b.png')
-        self.rect=self.image.get_rect()
-        self.a=x
-        self.b=y
-        self.rect.center=((self.a, self.b))
-    def c(self,x,y):
-        self.image=image.load('alien2c.png')
-        self.rect=self.image.get_rect()
-        self.a=x
-        self.b=y
-        self.rect.center=((self.a, self.b))
 
 
 class Bg1(Sprite):
     def __init__(self, x):
         Sprite.__init__(self)
-        self.image=image.load('gamebg1.jpg')
+        self.image=image.load('gamebg1.png')
         self.rect=self.image.get_rect()
         self.x=x
         self.rect.top=0
@@ -125,7 +107,27 @@ class Bg1(Sprite):
 class Bg2(Sprite):
     def __init__(self,x):
         Sprite.__init__(self)
-        self.image=image.load('gamebg2.jpg')
+        self.image=image.load('gamebg2.png')
+        self.rect=self.image.get_rect()
+        self.x=x
+        self.rect.top=0
+        self.rect.left=x
+    def move_left(self):
+        self.rect.left-=4
+class Bg3(Sprite):
+    def __init__(self, x):
+        Sprite.__init__(self)
+        self.image=image.load('gamebg3.png')
+        self.rect=self.image.get_rect()
+        self.x=x
+        self.rect.top=0
+        self.rect.left=x
+    def move_left(self):
+        self.rect.left-=4
+class Bg4(Sprite):
+    def __init__(self, x):
+        Sprite.__init__(self)
+        self.image=image.load('gamebg4.png')
         self.rect=self.image.get_rect()
         self.x=x
         self.rect.top=0
@@ -136,7 +138,7 @@ class Bg2(Sprite):
 class Pipeup(Sprite):
     def __init__(self):
         Sprite.__init__(self)
-        self.image=image.load('pipeup.jpg')
+        self.image=image.load('pipeup.png')
         self.rect=self.image.get_rect()
         self.rect.top=-700
         self.rect.left=1000
@@ -148,7 +150,7 @@ class Pipeup(Sprite):
 class Pipedown(Sprite):
     def __init__(self):
         Sprite.__init__(self)
-        self.image=image.load('pipedown.jpg')
+        self.image=image.load('pipedown.png')
         self.rect=self.image.get_rect()
         self.rect.bottom=1500
         self.rect.left=1000
@@ -163,7 +165,7 @@ class Pipedown(Sprite):
 class Pipeup1(Sprite):
     def __init__(self):
         Sprite.__init__(self)
-        self.image=image.load('pipeup.jpg')
+        self.image=image.load('pipeup.png')
         self.rect=self.image.get_rect()
         self.rect.top=-500
         self.rect.left=1600
@@ -175,7 +177,7 @@ class Pipeup1(Sprite):
 class Pipedown1(Sprite):
     def __init__(self):
         Sprite.__init__(self)
-        self.image=image.load('pipedown.jpg')
+        self.image=image.load('pipedown.png')
         self.rect=self.image.get_rect()
         self.rect.bottom=1300
         self.rect.left=1600

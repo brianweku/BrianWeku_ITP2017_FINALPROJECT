@@ -5,11 +5,11 @@ import random
 import burung_etc as b
 import time
 
-
+#start
 pygame.init()
-mixer.init()
-#pygame.mixer.music.load('')
-#pygame.mixer.music.play(-1)
+pygame.mixer.init()
+pygame.mixer.music.load('pixel.mp3')
+pygame.mixer.music.play(-1)
 #screen
 screen=display.set_mode((1080,800))
 pygame.display.set_caption("BIRDOP")
@@ -19,7 +19,7 @@ black=(0,0,0)
 white=(255,255,255)
 brown=(160,82,45)
 
-#
+
 
 
 
@@ -69,7 +69,12 @@ def play():
     pipedown1=b.Pipedown1()
     bg1=b.Bg1(0)
     bg2=b.Bg2(1080)
+    bg3=b.Bg3(2160)
+    bg4=b.Bg4(3240)
     gover=image.load('gameover.png')
+    flap=pygame.mixer.Sound('flap.ogg')
+    point=pygame.mixer.Sound('point.ogg')
+    crash=pygame.mixer.Sound('crash.ogg')
     active2 = True
     moveup=False
     movedown = False
@@ -83,8 +88,8 @@ def play():
     fourth=Group()
     fifth=(pipedown,pipeup,pipedown1,pipeup1)
     while active2:
-        scoreboard=b.text_box("%d"%score, 540, 100, 30, white)
-        second=Group(bg1, bg2,  bird,pipedown,pipeup,pipedown1,pipeup1, scoreboard)
+        scoreboard=b.text_box("%d"%score, 540, 100, 35, white)
+        second=Group(bg1, bg2, bg3, bg4, bird,pipedown,pipeup,pipedown1,pipeup1, scoreboard)
         screen.fill(white)
 
         second.draw(screen)
@@ -103,7 +108,9 @@ def play():
                     if i.key==K_SPACE:
                         start_time=pygame.time.get_ticks()
                         moveup=True
-                        #pygame.mixer.play('')
+                        flap.play()
+
+
                 if isinstance(bird, b.Alien):
                     if i.key==K_UP:
                         moveup=True
@@ -124,6 +131,7 @@ def play():
         if isinstance(bird,b.Alien):
             if moveup==True:
                 bird.move(0,-3)
+
 
             if movedown==True:
                 bird.move(0,3)
@@ -155,6 +163,7 @@ def play():
             pipeup.nextpos(postop)
             pipedown.nextpos(postbottom)
             score+=1
+            point.play()
 
         if pipeup1.rect.right<=0:
             if pipedown1.rect.bottom>=1350:
@@ -168,10 +177,15 @@ def play():
             pipeup1.nextpos(posttop1)
             pipedown1.nextpos(postbottom1)
             score+=1
+            point.play()
         if bg1.rect.right<=0:
-            bg1=b.Bg1(1080)
+            bg1=b.Bg1(3240)
         if bg2.rect.right<=0:
-            bg2=b.Bg2(1080)
+            bg2=b.Bg2(3240)
+        if bg3.rect.right<=0:
+            bg3=b.Bg3(3240)
+        if bg4.rect.right<=0:
+            bg4=b.Bg4(3240)
 
 
         if bird.rect.colliderect(pipeup) or bird.rect.colliderect(pipedown) or bird.rect.colliderect(pipeup1) or bird.rect.colliderect(pipedown1):
@@ -179,6 +193,7 @@ def play():
             second.draw(screen)
             screen.blit(gover, (340, 300))
             display.update()
+            crash.play()
             time.sleep(3)
             active2=False
 
@@ -188,13 +203,14 @@ def play():
             bird = b.Alien(bird.rect.centerx,bird.rect.centery)
 
 
+
         if isinstance(bird,b.Alien):
-            if pygame.time.get_ticks()-alientimer>=5000:
+            if pygame.time.get_ticks()-alientimer>=7000:
                 bird=b.Bird(bird.rect.centerx,bird.rect.centery)
                 movedown = False
                 moveup = False
         if isinstance(bird, b.Bird):
-            if pygame.time.get_ticks()-spawn>=13950:
+            if pygame.time.get_ticks()-spawn>=10000:
                 spawn=pygame.time.get_ticks()
                 tempalien=b.Alien(1080,random.randint(300,500))
                 fourth.add(tempalien)
@@ -206,7 +222,8 @@ def play():
         pipedown1.move_left()
         bg1.move_left()
         bg2.move_left()
-
+        bg3.move_left()
+        bg4.move_left()
         for alien in fourth:
             alien.move_left()
 
@@ -224,12 +241,17 @@ def help():
                 pygame.quit()
                 exit()
 
+            if i.type==KEYDOWN:
+                if i.key==K_ESCAPE:
+                        pygame.quit()
+                        exit()
+
             if i.type==MOUSEBUTTONDOWN:
                 if back_button.rect.collidepoint(mouse.get_pos()):
                     active3=False
 
 
-
+#PLAY
 menu()
 
 
