@@ -1,8 +1,9 @@
+#importing pygame
 from pygame import *
-from pygame.mixer import *
 from pygame.sprite import *
-import random
-import time
+
+
+#the bird
 class Bird(Sprite):
     def __init__(self,x,y):
         Sprite.__init__(self)
@@ -32,7 +33,7 @@ class Bird(Sprite):
         self.rect.center=((self.a, self.b))
 
 
-
+#if i want to add a text box button
 class text_box(Sprite):
     def __init__(self, message, x, y, font, color):
         Sprite.__init__(self)
@@ -43,6 +44,7 @@ class text_box(Sprite):
         self.rect=self.image.get_rect()
         self.rect.center=(x, y)
 
+#back button
 class Bbutton(Sprite):
     def __init__(self):
         Sprite.__init__(self)
@@ -51,7 +53,7 @@ class Bbutton(Sprite):
         self.image=image.load('backbutton.png')
         self.rect=self.image.get_rect()
         self.rect.center=(self.x, self.y)
-
+#start button
 class Sbutton(Sprite):
     def __init__(self):
         Sprite.__init__(self)
@@ -60,7 +62,7 @@ class Sbutton(Sprite):
         self.image=image.load('startbutton.png')
         self.rect=self.image.get_rect()
         self.rect.center=(self.x, self.y)
-
+#help button
 class Hbutton(Sprite):
     def __init__(self):
         Sprite.__init__(self)
@@ -69,6 +71,7 @@ class Hbutton(Sprite):
         self.image=image.load('Helpbutton.png')
         self.rect=self.image.get_rect()
         self.rect.center=(self.x, self.y)
+#exit button
 class Ebutton(Sprite):
     def __init__(self):
         Sprite.__init__(self)
@@ -77,6 +80,8 @@ class Ebutton(Sprite):
         self.image=image.load('exitbutton.png')
         self.rect=self.image.get_rect()
         self.rect.center=(self.x, self.y)
+
+#the alien icon and when it became one
 class Alien(Sprite):
     def __init__(self,x,y):
         Sprite.__init__(self)
@@ -90,9 +95,10 @@ class Alien(Sprite):
         self.b+=b
         self.rect.center=((self.a, self.b))
     def move_left(self):
-        self.rect.left-=4
+        self.rect.left-=4.5
 
 
+#moving backgrounds
 class Bg1(Sprite):
     def __init__(self, x):
         Sprite.__init__(self)
@@ -103,7 +109,6 @@ class Bg1(Sprite):
         self.rect.left=x
     def move_left(self):
         self.rect.left-=4
-
 class Bg2(Sprite):
     def __init__(self,x):
         Sprite.__init__(self)
@@ -135,7 +140,8 @@ class Bg4(Sprite):
     def move_left(self):
         self.rect.left-=4
 
-class Pipeup(Sprite):
+
+class Pipeup(Sprite):#first pair of pipes
     def __init__(self):
         Sprite.__init__(self)
         self.image=image.load('pipeup.png')
@@ -143,11 +149,11 @@ class Pipeup(Sprite):
         self.rect.top=-700
         self.rect.left=1000
     def move_left(self):
-        self.rect.left-=4
+        self.rect.left-=4.5
     def nextpos(self, top):
         self.rect.left = 1080
         self.rect.top = top
-class Pipedown(Sprite):
+class Pipedown(Sprite): #first pair of pipes
     def __init__(self):
         Sprite.__init__(self)
         self.image=image.load('pipedown.png')
@@ -155,14 +161,12 @@ class Pipedown(Sprite):
         self.rect.bottom=1500
         self.rect.left=1000
     def move_left(self):
-        self.rect.left-=4
+        self.rect.left-=4.5
     def nextpos(self, bottom):
         self.rect.left = 1080
         self.rect.bottom = bottom
 
-
-
-class Pipeup1(Sprite):
+class Pipeup1(Sprite): #second pair of pipes
     def __init__(self):
         Sprite.__init__(self)
         self.image=image.load('pipeup.png')
@@ -170,11 +174,11 @@ class Pipeup1(Sprite):
         self.rect.top=-500
         self.rect.left=1600
     def move_left(self):
-        self.rect.left-=4
+        self.rect.left-=4.5
     def nextpos(self, top):
         self.rect.left = 1080
         self.rect.top = top
-class Pipedown1(Sprite):
+class Pipedown1(Sprite): #second pair of pipes
     def __init__(self):
         Sprite.__init__(self)
         self.image=image.load('pipedown.png')
@@ -182,11 +186,12 @@ class Pipedown1(Sprite):
         self.rect.bottom=1300
         self.rect.left=1600
     def move_left(self):
-        self.rect.left-=4
+        self.rect.left-=4.5
     def nextpos(self, bottom):
         self.rect.left = 1080
         self.rect.bottom = bottom
 
+#color RGB code
 black=(0,0,0)
 white=(255,255,255)
 brown=(160,82,45)

@@ -1,5 +1,5 @@
+#importing pygame, timer, music, random function, and other folder
 from pygame import *
-from pygame.mixer import *
 from pygame.sprite import *
 import random
 import burung_etc as b
@@ -10,7 +10,9 @@ pygame.init()
 pygame.mixer.init()
 pygame.mixer.music.load('pixel.mp3')
 pygame.mixer.music.play(-1)
-#screen
+
+
+#screen resolution and its title of game
 screen=display.set_mode((1080,800))
 pygame.display.set_caption("BIRDOP")
 
@@ -22,18 +24,15 @@ brown=(160,82,45)
 
 
 
-
+#sprites and pictures in the main menu
 start=b.Sbutton()
 inst=b.Hbutton()
 bye=b.Ebutton()
-direction=image.load('instructions.png')
-back_button=b.Bbutton()
 menubg=image.load('bgground.png')
-first=Group(start, inst,bye)
-third=Group(back_button)
+first=Group(start,inst,bye)
 
-#go
-def menu():
+#the main menu
+def playon():
     active1 = True
     while active1:
         screen.fill(white)
@@ -60,7 +59,10 @@ def menu():
                     help()
                 if start.rect.collidepoint(mouse.get_pos()):
                     play()
+
+#where the game starts
 def play():
+    #variables, classes
     score=0
     bird=b.Bird(100,350)
     pipeup=b.Pipeup()
@@ -138,7 +140,7 @@ def play():
 
 
         if isinstance(bird,b.Bird):
-            if pygame.time.get_ticks()-start_time>=450:
+            if pygame.time.get_ticks()-start_time>=500:
                 moveup=False
                 bird.normal()
             if pygame.time.get_ticks()-start_time>=700:
@@ -146,7 +148,7 @@ def play():
                 bird.down()
             if moveup==True:
                 if bird.rect.top>=0:
-                    bird.move(-4.5)
+                    bird.move(-5.5)
                     bird.up()
             if moveup==False:
                 if bird.rect.bottom<=800:
@@ -210,7 +212,7 @@ def play():
                 movedown = False
                 moveup = False
         if isinstance(bird, b.Bird):
-            if pygame.time.get_ticks()-spawn>=10000:
+            if pygame.time.get_ticks()-spawn>=17000:
                 spawn=pygame.time.get_ticks()
                 tempalien=b.Alien(1080,random.randint(300,500))
                 fourth.add(tempalien)
@@ -227,6 +229,10 @@ def play():
         for alien in fourth:
             alien.move_left()
 
+#picure in the help menu
+direction=image.load('instructions.png')
+back_button=b.Bbutton()
+third=Group(back_button)
 
 def help():
     active3=True
@@ -252,7 +258,6 @@ def help():
 
 
 #PLAY
-menu()
-
+playon()
 
 
