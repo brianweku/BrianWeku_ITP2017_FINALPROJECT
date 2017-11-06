@@ -1,7 +1,8 @@
-#importing pygame and random
+#importing pygame
 from pygame import *
 from pygame.sprite import *
-import random
+
+#creating classes to be called on another file
 
 #the bird
 class Bird(Sprite):
@@ -225,3 +226,4 @@ black=(0,0,0)
 white=(255,255,255)
 brown=(160,82,45)
 
+ 

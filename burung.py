@@ -32,13 +32,10 @@ menubg=image.load('bgground.png')
 sound=b.Playbutton()
 sound1=b.Pausebutton()
 first=Group(start,inst,bye,sound,sound1)
-
 #the main menu
 def playon():
     active1 = True
-
     while active1:
-        screen.fill(white)
         screen.blit(menubg, (0,0))
         first.draw(screen)
         display.update()
@@ -54,6 +51,7 @@ def playon():
                 if i.key==K_ESCAPE:
                     pygame.quit()
                     exit()
+
             if i.type==MOUSEBUTTONDOWN:
                 if bye.rect.collidepoint(mouse.get_pos()):
                     pygame.quit()
@@ -97,12 +95,11 @@ def play():
     spawn=pygame.time.get_ticks()
     fourth=Group()
     fifth=(pipedown,pipeup,pipedown1,pipeup1)
+    birdgroup = Group(bird)
     while active2:
-
         scoreboard=b.text_box("%d"%score, 540, 100, 35, white)
-        second=Group(bg1, bg2, bg3, bg4, bird,pipedown,pipeup,pipedown1,pipeup1, scoreboard)
-        screen.fill(white)
-
+        second=Group(bg1, bg2, bg3, bg4,bird, pipedown,pipeup,pipedown1,pipeup1, scoreboard)
+        birdgroup.draw(screen)
         second.draw(screen)
         fourth.draw(screen)
         display.update()
@@ -116,12 +113,12 @@ def play():
                 if i.key==K_ESCAPE:
                         pygame.quit()
                         exit()
+
                 if isinstance(bird, b.Bird):
                     if i.key==K_SPACE:
                         start_time=pygame.time.get_ticks()
                         moveup=True
                         flap.play()
-
 
                 if isinstance(bird, b.Alien):
                     if i.key==K_UP:
@@ -129,8 +126,6 @@ def play():
 
                     if i.key==K_DOWN:
                         movedown=True
-
-
 
             if isinstance(bird,b.Alien):
                 if i.type==KEYUP:
@@ -140,17 +135,12 @@ def play():
                     if i.key==K_DOWN:
                         movedown=False
 
-
-
-
         if isinstance(bird,b.Alien):
             if moveup==True:
                 bird.move(0,-3)
 
-
             if movedown==True:
                 bird.move(0,3)
-
 
         if isinstance(bird,b.Bird):
             if pygame.time.get_ticks()-start_time>=500:
@@ -161,7 +151,7 @@ def play():
                 bird.down()
             if moveup==True:
                 if bird.rect.top>=0:
-                    bird.move(-5.5)
+                    bird.move(-5.81)
                     bird.up()
             if moveup==False:
                 if bird.rect.bottom<=800:
@@ -205,7 +195,7 @@ def play():
 
         if bird.rect.colliderect(pipeup) or bird.rect.colliderect(pipedown) or bird.rect.colliderect(pipeup1) or bird.rect.colliderect(pipedown1):
             hover.stop()
-            screen.fill(white)
+            
             second.draw(screen)
             screen.blit(gover,(340, 300))
             display.update()
@@ -214,13 +204,15 @@ def play():
             active2=False
 
 
-        if spritecollideany(bird, fourth):
+        if pygame.sprite.groupcollide(birdgroup, fourth, False, True):
             alientimer=pygame.time.get_ticks()
             moveup=False
             bird = b.Alien(bird.rect.centerx,bird.rect.centery)
             hover.play()
+            
         if isinstance(bird, b.Bird):
             hover.stop()
+
         if isinstance(bird,b.Alien):
 
             bird.Add()
@@ -231,11 +223,13 @@ def play():
                 bird=b.Bird(bird.rect.centerx,bird.rect.centery)
                 movedown = False
                 moveup = False
+
         if isinstance(bird, b.Bird):
             if pygame.time.get_ticks()-spawn>=17000:
                 spawn=pygame.time.get_ticks()
                 tempalien=b.Alien(1080,random.randint(300,500))
                 fourth.add(tempalien)
+
         groupcollide(fifth,fourth,False,True)
 
         pipeup.move_left()
