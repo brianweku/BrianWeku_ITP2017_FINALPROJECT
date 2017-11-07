@@ -151,7 +151,7 @@ def play():
                 bird.down()
             if moveup==True:
                 if bird.rect.top>=0:
-                    bird.move(-5.81)
+                    bird.move(-5.6)
                     bird.up()
             if moveup==False:
                 if bird.rect.bottom<=800:
